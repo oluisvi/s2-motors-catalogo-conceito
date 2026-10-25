@@ -469,22 +469,24 @@ h1 span {
   text-align:right
 }
 .specs {
-  display:flex;
-  gap:0;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px 12px;
   border-top:1px solid #dce4df;
   margin:0 19px;
-  padding:13px 0 0
+  padding:13px 0
 }
 .spec {
-  flex:1;
+  min-width:0;
   color:#6b7b75;
-  font-size:8px;
+  font-size:9px;
   letter-spacing:.05em
 }
 .spec strong {
   display:block;
   color:var(--ink);
   font:12px var(--mono);
+  overflow-wrap:anywhere;
   letter-spacing:0;
   margin-top:6px
 }
@@ -1136,9 +1138,6 @@ h1, .hero-copy h1 {
   .wrap {
     width: min(91vw, 1440px);
   }
-  .hero-stage {
-    min-height: 720px;
-  }
   .hero-copy {
     padding: 48px 8% 10px;
   }
@@ -1180,6 +1179,9 @@ h1, .hero-copy h1 {
   }
   .compare-items {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .specs {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 @media (min-width: 900px) {
@@ -1318,6 +1320,11 @@ h1, .hero-copy h1 {
   }
   .compare-items {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1200px) {
+  .specs {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 @media (prefers-reduced-motion: reduce) {
